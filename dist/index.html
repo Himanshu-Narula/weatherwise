@@ -13,35 +13,66 @@
     <!-- 
         - favicon
     -->
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/logo-icons/favicon.svg" type="image/svg+xml">
     <!-- 
         - google font link 
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <!-- 
         - css links
     -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
 </head>
-<body class="bg-background">
-    <header class="h-20 flex items-center p-5">
+
+<body class="bg-background text-onbackground text-body-3 overflow-hidden grid grid-rows-[auto,1fr,auto] min-h-screen">
+    
+    <header class="h-20 flex items-center mt-2 ml-5 mr-5 pb-7 p-5 border-b border-borderColor">
+        
         <nav class="flex items-center justify-between w-full">
             <div class="flex">
                 <img src="/assets/logo-icons/logo_only.png" class="w-12 h-8" alt="">
-                <h1 class="text-white">WeatherWise</h1>
+                <h1 class="">WeatherWise</h1>
             </div>
-            <div>
-                <input type="text" placeholder="Search city...">
-                <button type="submit"><img src="/assets/logo-icons/search-icon.png" class="w-5 h-5" alt=""></button>
+            <div class="flex items-center justify-center">
+                <input type="text" placeholder="Search city..." class="rounded-md pl-3 pr-3 bg-surface text-searchFontColor placeholder-searchFontColor text-body-2">
+                <button type="submit"><img src="/assets/logo-icons/search-icon.png" class="w-8 h-8 ml-2 p-1" alt=""></button>
             </div>
-            <div>
-                <button class="text-white">Current Location</button>
+            <div class="bg-primary flex justify-center items-center pl-2 pr-2 rounded-md text-body-2">
+                <a href="#" class="pr-2"><img src="/assets/logo-icons/current-location-icon.png" class="w-5 h-5" alt=""></a>
+                <button class="text-black">Current Location</button>
             </div>
         </nav>
+
     </header>
-    <!-- <h1 class="bg-white">Hello Tailwind</h1> -->
+    
+    <main>
+        <div class="bg-surface h-96 m-5 rounded-md">
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="m-5">
+            <h2>5-Days Forecast</h2>
+            <div class="flex">
+                <div class="w-full h-full bg-surface mt-5 mb-5 rounded-md"></div>
+                <div class="w-full h-full bg-surface m-5 rounded-md"></div>
+                <div class="w-full h-full bg-surface mt-5 mb-5 rounded-md"></div>
+                <div class="w-full h-full bg-surface m-5 rounded-md"></div>
+                <div class="w-full h-full bg-surface mt-5 mb-5 rounded-md"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="flex justify-center m-5 pt-4 h-11 text-xl items-center border-t border-borderColor text-footerFontColor font-bold">
+        <p>Copyright &copy; 2024 WeatherWise. All Rights Reserved.</p>
+        <p class="ml-10">Powered By</p>
+        <img class="ml-2 w-44" src="/assets/logo-icons/openweather.png" alt="">
+    </footer>
+
     <!--
         - js links
     -->
