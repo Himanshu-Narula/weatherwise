@@ -1,0 +1,7 @@
+:root{
+  --ff-nunito-sans: 'Nunito Sans', sans-serif;
+}
+
+html{
+  font-family: var(--ff-nunito-sans);
+}
