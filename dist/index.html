@@ -34,13 +34,13 @@
         <nav class="flex items-center justify-between w-full">
             <div class="flex">
                 <img src="/assets/logo-icons/logo_only.png" class="w-12 h-8" alt="">
-                <h1 class="">WeatherWise</h1>
+                <h1 class="pl-2">WeatherWise</h1>
             </div>
             <div class="flex items-center justify-center">
-                <input type="text" placeholder="Search city..." class="rounded-md pl-3 pr-3 bg-surface text-searchFontColor placeholder-searchFontColor text-body-2">
-                <button type="submit"><img src="/assets/logo-icons/search-icon.png" class="w-8 h-8 ml-2 p-1" alt=""></button>
+                <input type="text" placeholder="Search city..." class="rounded-md pl-3 pr-3 bg-surface text-searchFontColor placeholder-searchFontColor text-body-2 transform transition-transform duration-300 ease-in-out hover:border border-white">
+                <button type="submit"><img src="/assets/logo-icons/search-icon.png" class="w-8 h-8 ml-2 p-1 transform transition-transform duration-300 ease-in-out hover:scale-110" alt=""></button>
             </div>
-            <div class="bg-primary flex justify-center items-center pl-2 pr-2 rounded-md text-body-2">
+            <div class="bg-primary flex justify-center items-center pl-2 pr-2 rounded-md text-body-2 transition-all duration-300 ease-in-out hover:bg-primary2 hover:scale-110">
                 <a href="#" class="pr-2"><img src="/assets/logo-icons/current-location-icon.png" class="w-5 h-5" alt=""></a>
                 <button class="text-black">Current Location</button>
             </div>
@@ -49,11 +49,46 @@
     </header>
     
     <main>
-        <div class="bg-surface h-96 m-5 rounded-md">
-            <div></div>
-            <div></div>
+        <!-- 
+            - main 1st section
+        -->
+        <div class="bg-surface h-96 m-5 rounded-md flex flex-col justify-between">
+            <p class="pl-3 pt-2 text-2xl">Now</p>
+            <div id="container-temp" class="pl-3">
+                <div id="temp-main" class="text-8xl pl-2 flex flex-col justify-between h-72 pt-5">
+                    <div>
+                        <span id="temp-temp"></span>
+                        <span id="temp-text">&deg;<span class="text-7xl">C</span></span>
+                    </div>
+                    <div>
+                        <div id="temp-min" class="text-xl mt-1">
+                            <span>Minimum Temperature:</span>
+                            <span id="min-temp"></span>
+                        </div>
+                        <div id="temp-max" class="text-xl mt-1">
+                            <span>Maximum Temperature:</span>
+                            <span id="max-temp"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="temp-sub1"></div>
+                <div id="temp-sub2"></div>
+            </div>
+            <div class="m-3 flex justify-evenly border-t border-borderColor">
+                <div class="flex mt-1">
+                    <img src="/assets/logo-icons/calendar-icon.png" class="h-8 w-8 mr-2" alt="calendar icon">
+                    <span class="mt-1 text-footerFontColor text-xl" id="date"></span>
+                </div>
+                <div class="flex mt-1">
+                    <img src="/assets/logo-icons/location-icon.png" class="h-8 w-8 mr-1" alt="loaction icon">
+                    <span class="mt-1 text-footerFontColor text-xl" id="city-country"></span>
+                </div>
+            </div>
+            
         </div>
-
+        <!-- 
+            - main 2nd section - 5 cards
+        -->
         <div class="m-5">
             <h2>5-Days Forecast</h2>
             <div class="flex">
@@ -64,13 +99,15 @@
                 <div class="w-full h-full bg-surface mt-5 mb-5 rounded-md"></div>
             </div>
         </div>
-
     </main>
 
     <footer class="flex justify-center m-5 pt-4 h-11 text-xl items-center border-t border-borderColor text-footerFontColor font-bold">
         <p>Copyright &copy; 2024 WeatherWise. All Rights Reserved.</p>
-        <p class="ml-10">Powered By</p>
-        <img class="ml-2 w-44" src="/assets/logo-icons/openweather.png" alt="">
+        <p class="ml-5">Powered By</p>
+
+        <!-- target="_blank": This instructs the browser to open the link in a new window or tab.
+             rel="noopener noreferrer": This attribute helps prevent the new page from gaining access to the original page's window object, which is a security measure to avoid potential malicious behavior and improve performance. -->
+        <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer"><img class=" ml-2 w-44" src="/assets/logo-icons/openweather.png" alt="openweather website logo and link"></a>
     </footer>
 
     <!--
