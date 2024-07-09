@@ -1,6 +1,6 @@
 'use strict';
 
-const api_key = "2d0e6b5bc0d83665ab4827fe3b2d893c";
+const api_key = "###########################";
 const api_url = "https://api.openweathermap.org/data/2.5/weather?q=delhi&units=metric";
 
 // Get the current date
