@@ -125,8 +125,8 @@ async function checkWeather(city){
         .then(data => {
             document.getElementById("city-country").innerHTML = data.name + ", " + data.sys.country; // updating value of city and country element
             document.getElementById("temp-text1").innerHTML = data.main.temp.toFixed(1); // updating value of main temperature
-            document.getElementById("min-temp").innerHTML = data.main.temp_min + " &deg;C"; // updating value of min temperature
-            document.getElementById("max-temp").innerHTML = data.main.temp_max + " &deg;C"; // updating value of max temperature
+            document.getElementById("min-temp").innerHTML = data.main.temp_min.toFixed(1) + " &deg;C"; // updating value of min temperature
+            document.getElementById("max-temp").innerHTML = data.main.temp_max.toFixed(1) + " &deg;C"; // updating value of max temperature
 
             const weatherIcon = document.getElementById("weather-icon"); // getting weather icon element
 

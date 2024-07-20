@@ -72,21 +72,19 @@
             <div id="container-temp" class="flex flex-col justify-between 2xl:flex-row">
 
                 <!-- Main temperature of the day with Min and Max Temp -->
-                <div id="temp-main" class="text-8xl pl-2 flex flex-col justify-between items-center pt-5 mr-10">
+                <div id="temp-main" class="text-8xl pl-2 flex flex-col justify-between items-center pt-5 mr-10 2xl:items-start">
                     <div>
                         <img id="weather-icon" src="/assets/weather-icons/1.png" alt="" class="ml-2 w-36 h-36"> <!-- Weather Icon -->
                     </div>
                     <div class="mt-4">
                         <span id="temp-text1">37.5 </span><span id="temp-text2">&deg;<span class="text-7xl">C</span></span> <!-- Main Temperature -->
                     </div>
-                    <div class="pl-1 mt-5 2xl:-ml-5">
+                    <div class="pl-1 mt-5" id="min-max-container">
                         <div id="temp-min" class="text-xl mt-1"> <!-- Min Temp -->
-                            <span>Minimum Temperature:</span>
-                            <span id="min-temp">37.5&deg;C</span>
+                            <span>Minimum Temperature: <span id="min-temp">37.5&deg;C</span></span>
                         </div>
                         <div id="temp-max" class="text-xl mt-1"> <!-- Max Temp -->
-                            <span>Maximum Temperature:</span>
-                            <span id="max-temp">37.5&deg;C</span>
+                            <span>Maximum Temperature: <span id="max-temp">37.5&deg;C</span></span>
                         </div>
                     </div>
                 </div>
