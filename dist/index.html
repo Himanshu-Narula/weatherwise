@@ -28,7 +28,7 @@
 </head>
 
 
-<body class="bg-background text-onbackground text-body-3 overflow-y-auto overflow-x-hidden grid grid-rows-[auto,1fr,auto] min-h-screen">
+<body class="bg-background text-onbackground text-body-3 overflow-y-auto overflow-x-hidden grid grid-rows-[auto,1fr,auto] max-h-screen">
     <!-- 
         - Header/nav bar
     -->
@@ -74,7 +74,7 @@
                 <!-- Main temperature of the day with Min and Max Temp -->
                 <div id="temp-main" class="text-8xl pl-2 flex flex-col justify-between items-center pt-5 mr-10 2xl:items-start">
                     <div>
-                        <img id="weather-icon" src="/assets/weather-icons/1.png" alt="" class="ml-2 w-36 h-36"> <!-- Weather Icon -->
+                        <img id="weather-icon" src="/assets/weather-icons/1.png" alt="" class="ml-2 w-32 h-32 2xl:ml-20"> <!-- Weather Icon -->
                     </div>
                     <div class="mt-4">
                         <span id="temp-text1">37.5 </span><span id="temp-text2">&deg;<span class="text-7xl">C</span></span> <!-- Main Temperature -->
@@ -201,27 +201,27 @@
 
                 <!-- Cards with weather icon, temp and date -->
                 <div class="bg-surface w-full mt-4 mr-4 rounded-md flex flex-col items-center hover:transform hover:-translate-y-4 transition duration-300 ease-in-out">
-                    <img id="forecast-icon-1" src="/assets/weather-icons/1.png" alt="weather icon" class="h-20 w-20 m-5">
+                    <img id="forecast-icon-1" src="/assets/weather-icons/1.png" alt="weather icon" class="h-20 w-20 m-5 2xl:h-28 2xl:w-28">
                     <span id="forecast-temp-1" class="text-4xl m-5 mb-3 2xl:text-7xl">37.5&deg;<span class="text-3xl 2xl:text-6xl">C</span></span> 
                     <p id="forecast-date-1" class="text-base m-5 mt-0 2xl:text-xl">2 Jan, 2024</p>
                 </div>
                 <div class="bg-surface w-full mt-4 mr-4 rounded-md flex flex-col items-center hover:transform hover:-translate-y-4 transition duration-300 ease-in-out">
-                    <img id="forecast-icon-2" src="/assets/weather-icons/2.png" alt="weather icon" class="h-20 w-20 m-5">
+                    <img id="forecast-icon-2" src="/assets/weather-icons/2.png" alt="weather icon" class="h-20 w-20 m-5 2xl:h-28 2xl:w-28">
                     <span id="forecast-temp-2" class="text-4xl m-5 mb-3 2xl:text-7xl">28.8&deg;<span class="text-3xl 2xl:text-6xl">C</span></span>
                     <p id="forecast-date-2" class="text-base m-5 mt-0 2xl:text-xl">3 Jan, 2024</p>
                 </div>
                 <div class="bg-surface w-full mt-4 mr-4 rounded-md flex flex-col items-center hover:transform hover:-translate-y-4 transition duration-300 ease-in-out">
-                    <img id="forecast-icon-3" src="/assets/weather-icons/6.png" alt="weather icon" class="h-20 w-20 m-5">
+                    <img id="forecast-icon-3" src="/assets/weather-icons/6.png" alt="weather icon" class="h-20 w-20 m-5 2xl:h-28 2xl:w-28">
                     <span id="forecast-temp-3" class="text-4xl m-5 mb-3 2xl:text-7xl">21.6&deg;<span class="text-3xl 2xl:text-6xl">C</span> </span>
                     <p id="forecast-date-3" class="text-base m-5 mt-0 2xl:text-xl">4 Jan, 2024</p>
                 </div>
                 <div class="bg-surface w-full mt-4 mr-4 rounded-md flex flex-col items-center hover:transform hover:-translate-y-4 transition duration-300 ease-in-out">
-                    <img id="forecast-icon-4" src="/assets/weather-icons/4.png" alt="weather icon" class="h-20 w-20 m-5">
+                    <img id="forecast-icon-4" src="/assets/weather-icons/4.png" alt="weather icon" class="h-20 w-20 m-5 2xl:h-28 2xl:w-28">
                     <span id="forecast-temp-4" class="text-4xl m-5 mb-3 2xl:text-7xl">23.4&deg;<span class="text-3xl 2xl:text-6xl">C</span> </span>
                     <p id="forecast-date-4" class="text-base m-5 mt-0 2xl:text-xl">5 Jan, 2024</p>
                 </div>
                 <div class="bg-surface w-full mt-4 mr-6 rounded-md flex flex-col items-center hover:transform hover:-translate-y-4 transition duration-300 ease-in-out">
-                    <img id="forecast-icon-5" src="/assets/weather-icons/5.png" alt="weather icon" class="h-20 w-20 m-5">
+                    <img id="forecast-icon-5" src="/assets/weather-icons/5.png" alt="weather icon" class="h-20 w-20 m-5 2xl:h-28 2xl:w-28">
                     <span id="forecast-temp-5" class="text-4xl m-5 mb-3 2xl:text-7xl">22.8&deg;<span class="text-3xl 2xl:text-6xl">C</span> </span>
                     <p id="forecast-date-5" class="text-base m-5 mt-0 2xl:text-xl">6 Jan, 2024</p>
                 </div>
