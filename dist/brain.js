@@ -132,31 +132,31 @@ async function checkWeather(city){
 
             // assigning weather icon according to description provided by API
             if(data.weather[0].main == "Clear"){
-                weatherIcon.src = "/assets/weather-icons/1.png";
+                weatherIcon.src = "../assets/weather-icons/1.png";
             }
             else if(data.weather[0].main == "Clouds"){
-                weatherIcon.src = "/assets/weather-icons/4.png";
+                weatherIcon.src = "../assets/weather-icons/4.png";
             }
             else if(data.weather[0].main == "Mist"){
-                weatherIcon.src = "/assets/weather-icons/5.png";
+                weatherIcon.src = "../assets/weather-icons/5.png";
             }
             else if(data.weather[0].main == "Drizzle"){
-                weatherIcon.src = "/assets/weather-icons/6.png";
+                weatherIcon.src = "../assets/weather-icons/6.png";
             }
             else if(data.weather[0].main == "Rain"){
-                weatherIcon.src = "/assets/weather-icons/7.png";
+                weatherIcon.src = "../assets/weather-icons/7.png";
             }
             else if(data.weather[0].main == "Thunderstorm"){
-                weatherIcon.src = "/assets/weather-icons/8.png";
+                weatherIcon.src = "../assets/weather-icons/8.png";
             }
             else if(data.weather[0].main == "Snow"){
-                weatherIcon.src = "/assets/weather-icons/9.png";
+                weatherIcon.src = "../assets/weather-icons/9.png";
             }
             else{
-                weatherIcon.src = "/assets/weather-icons/2.png";
+                weatherIcon.src = "../assets/weather-icons/2.png";
             }
 
-            document.getElementById("feels-like").innerHTML = data.main.feels_like + " &deg;C"; // updating value of feels like element
+            document.getElementById("feels-like").innerHTML = data.main.feels_like.toFixed(0) + " &deg;C"; // updating value of feels like element
             document.getElementById("humidity").innerHTML = data.main.humidity + "%"; // updating value of humidity element
             document.getElementById("pressure").innerHTML = data.main.pressure + " hPa"; // updating value of pressure element
             document.getElementById("visibility").innerHTML = Math.round(data.visibility/1000) + " km"; // updating value of visibility element
@@ -225,28 +225,28 @@ async function checkWeather(city){
                 // function to assign weather icon
                 function getIcon(mainIcon){
                     if(mainIcon == "Clear"){
-                        return "/assets/weather-icons/1.png";
+                        return "../assets/weather-icons/1.png";
                     }
                     else if(mainIcon == "Clouds"){
-                        return "/assets/weather-icons/4.png";
+                        return "../assets/weather-icons/4.png";
                     }
                     else if(mainIcon == "Mist"){
-                        return "/assets/weather-icons/5.png";
+                        return "../assets/weather-icons/5.png";
                     }
                     else if(mainIcon == "Drizzle"){
-                        return "/assets/weather-icons/6.png";
+                        return "../assets/weather-icons/6.png";
                     }
                     else if(mainIcon == "Rain"){
-                        return "/assets/weather-icons/7.png";
+                        return "../assets/weather-icons/7.png";
                     }
                     else if(mainIcon == "Thunderstorm"){
-                        return "/assets/weather-icons/8.png";
+                        return "../assets/weather-icons/8.png";
                     }
                     else if(mainIcon == "Snow"){
-                        return "/assets/weather-icons/9.png";
+                        return "../assets/weather-icons/9.png";
                     }
                     else{
-                        return "/assets/weather-icons/2.png";
+                        return "../assets/weather-icons/2.png";
                     }
                 }
 
@@ -258,27 +258,27 @@ async function checkWeather(city){
                         // adding conditions for every successive day forecast
                         if((currentDate + 1 == dt || "01" == dt) && "00:00:00" == foundTime){
                             document.getElementById("forecast-icon-1").src = getIcon(data.list[i].weather[0].main); // using get icon function to get weather icon and updating it also
-                            document.getElementById("forecast-temp-1").innerHTML = `${data.list[i].main.temp.toFixed(1)}&deg;<span class="text-3xl 2xl:text-6xl">C</span>`; // updating forecast temperature data for that day
+                            document.getElementById("forecast-temp-1").innerHTML = `${data.list[i].main.temp.toFixed(1)}&deg;<span class="text-lg md:text-3xl lg:text-4xl xl:text-5xl">C</span>`; // updating forecast temperature data for that day
                             document.getElementById("forecast-date-1").innerHTML = `${dt} ${months[mn-1]}, ${yr}`; // using previously splitted date to generate full date in our format
                         }
                         if((currentDate + 2 == dt || "02" == dt) && "00:00:00" == foundTime){
                             document.getElementById("forecast-icon-2").src = getIcon(data.list[i].weather[0].main);
-                            document.getElementById("forecast-temp-2").innerHTML = `${data.list[i].main.temp.toFixed(1)}&deg;<span class="text-3xl 2xl:text-6xl">C</span>`;
+                            document.getElementById("forecast-temp-2").innerHTML = `${data.list[i].main.temp.toFixed(1)}&deg;<span class="text-lg md:text-3xl lg:text-4xl xl:text-5xl">C</span>`;
                             document.getElementById("forecast-date-2").innerHTML = `${dt} ${months[mn-1]}, ${yr}`;
                         }
                         if((currentDate + 3 == dt || "03" == dt) && "00:00:00" == foundTime){
                             document.getElementById("forecast-icon-3").src = getIcon(data.list[i].weather[0].main);
-                            document.getElementById("forecast-temp-3").innerHTML = `${data.list[i].main.temp.toFixed(1)}&deg;<span class="text-3xl 2xl:text-6xl">C</span>`;
+                            document.getElementById("forecast-temp-3").innerHTML = `${data.list[i].main.temp.toFixed(1)}&deg;<span class="text-lg md:text-3xl lg:text-4xl xl:text-5xl">C</span>`;
                             document.getElementById("forecast-date-3").innerHTML = `${dt} ${months[mn-1]}, ${yr}`;
                         }
                         if((currentDate + 4 == dt || "04" == dt) && "00:00:00" == foundTime){
                             document.getElementById("forecast-icon-4").src = getIcon(data.list[i].weather[0].main);
-                            document.getElementById("forecast-temp-4").innerHTML = `${data.list[i].main.temp.toFixed(1)}&deg;<span class="text-3xl 2xl:text-6xl">C</span>`;
+                            document.getElementById("forecast-temp-4").innerHTML = `${data.list[i].main.temp.toFixed(1)}&deg;<span class="text-lg md:text-3xl lg:text-4xl xl:text-5xl">C</span>`;
                             document.getElementById("forecast-date-4").innerHTML = `${dt} ${months[mn-1]}, ${yr}`;
                         }
                         if((currentDate + 5 == dt || "05" == dt) && "00:00:00" == foundTime){
                             document.getElementById("forecast-icon-5").src = getIcon(data.list[i].weather[0].main);
-                            document.getElementById("forecast-temp-5").innerHTML = `${data.list[i].main.temp.toFixed(1)}&deg;<span class="text-3xl 2xl:text-6xl">C</span>`;
+                            document.getElementById("forecast-temp-5").innerHTML = `${data.list[i].main.temp.toFixed(1)}&deg;<span class="text-lg md:text-3xl lg:text-4xl xl:text-5xl">C</span>`;
                             document.getElementById("forecast-date-5").innerHTML = `${dt} ${months[mn-1]}, ${yr}`;
                         }
                     }

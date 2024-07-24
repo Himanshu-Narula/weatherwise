@@ -13,7 +13,7 @@
     <!-- 
         - favicon
     -->
-    <link rel="icon" href="/assets/logo-icons/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/logo-icons/favicon.svg" type="image/svg+xml">
     <!-- 
         - google font link 
     -->
@@ -28,147 +28,146 @@
 </head>
 
 
-<body class="bg-background text-onbackground text-body-3 overflow-y-auto overflow-x-hidden grid grid-rows-[auto,1fr,auto] max-h-screen">
+<body class="bg-background text-onbackground text-body-3 overflow-y-auto overflow-x-hidden flex flex-col items-center w-[100vw] h-[100vh]">
     <!-- 
         - Header/nav bar
     -->
-    <header class="h-20 flex items-center mt-2 ml-5 mr-5 pb-7 pt-5 border-b border-borderColor">
+    <header class="h-20 w-[94%] flex items-center border-b border-borderColor md:w-[96%]">
         
-        <nav class="flex items-center justify-between w-full">
-            <div class="flex">  <!-- For logo -->
-                <img src="/assets/logo-icons/logo_only.png" class="w-12 h-8 2xl:ml-5" alt="">
-                <h1 class="pl-2 hidden xl:block">WeatherWise</h1>
+        <nav class="flex w-[100%] items-center justify-between my-2 md:my-4">
+            <div class="flex mr-14">  <!-- For logo and name-->
+                <img src="../assets/logo-icons/logo_only.png" class="w-14 h-7 md:h-9" alt="WeatherWise logo">
+                <h1 class="pl-2 hidden lg:block">WeatherWise</h1>
             </div>
-            <div class="flex items-center justify-center">  <!-- For search bar, dropdown menu and search icon -->
-                <div class="relative">
-                    <input type="text" id="searchInp" placeholder="Search city..." class="rounded-md pl-3 pr-3 bg-surface text-searchFontColor placeholder-searchFontColor text-body-2 transform transition-transform duration-300 ease-in-out hover:border border-white">
-                    <ul id="ddmenu" class="hidden border-white border-b-2 border-t-2 shadow-sm shadow-white z-10 absolute bg-surface rounded-md mt-1 pl-3 pr-3 p-2 w-custom-width-3">
-                        <li id="headlineDD" class="text-searchFontColor text-base flex items-center p-1 border-b border-footerFontColor border-dashed"><img src="/assets/logo-icons/recently-searched.png" alt="recently searched icon" class="w-5 h-5 mr-1">Recently Searched</li>
-                        <li id="1stDD" class="cursor-pointer text-body-2 p-1 transform transition-hover duration-200 ease-in-out hover:bg-background rounded-md"></li>
-                        <li id="2ndDD" class="cursor-pointer text-body-2 p-1 transform transition-hover duration-200 ease-in-out hover:bg-background rounded-md"></li>
-                        <li id="3rdDD" class="cursor-pointer text-body-2 p-1 transform transition-hover duration-200 ease-in-out hover:bg-background rounded-md"></li>
-                    </ul>
-                </div>
-                <button type="submit" id="searchBtn"><img src="/assets/logo-icons/search-icon.png" class="w-8 h-8 ml-2 p-1 transform transition-transform duration-300 ease-in-out hover:scale-110" alt="search icon"></button>
+            <!-- For search bar, dropdown menu and search icon -->
+            <div class="relative flex items-center">
+                <input type="text" id="searchInp" placeholder="Search city..." class="w-[65%] md:w-[75%] h-7 md:h-9 rounded-md pl-3 pr-3 bg-surface text-searchFontColor placeholder-searchFontColor placeholder:text-xl md:placeholder:text-2xl text-xl md:text-2xl transform transition-transform duration-300 ease-in-out hover:border border-white">
+                <ul id="ddmenu" class="hidden w-[65%] md:w-[75%] top-6 border-white border-b-2 border-t-2 shadow-sm shadow-white z-10 absolute bg-surface rounded-md mt-2 px-2 md:mt-4">
+                    <li id="headlineDD" class="text-searchFontColor text-xs py-2 flex items-center border-b border-footerFontColor border-dashed "><img src="../assets/logo-icons/recently-searched.png" alt="recently searched icon" class="w-4 h-4 mr-1">Recently Searched</li>
+                    <li id="1stDD" class="cursor-pointer py-1 text-xl transform transition-hover duration-200 ease-in-out hover:bg-background rounded-md"></li>
+                    <li id="2ndDD" class="cursor-pointer py-1 text-xl transform transition-hover duration-200 ease-in-out hover:bg-background rounded-md"></li>
+                    <li id="3rdDD" class="cursor-pointer py-1 text-xl transform transition-hover duration-200 ease-in-out hover:bg-background rounded-md"></li>
+                </ul>
+                <button type="submit" id="searchBtn"><img src="../assets/logo-icons/search-icon.png" class="w-7 h-7 md:w-8 md:h-8 ml-1 p-1 transform transition-transform duration-300 ease-in-out hover:scale-110" alt="search icon"></button>
             </div>
 
             <!-- For current location button -->
-            <div class="bg-primary flex justify-center items-center pl-2 pr-2 rounded-md text-body-2 transition-all duration-300 ease-in-out hover:bg-primary2 hover:scale-110">
-                <a href="#" class="pr-2"><img src="/assets/logo-icons/current-location-icon.png" class="w-5 h-5" alt=""></a>
-                <button class="text-black" id="currlocbtn">Current Location</button>
+            <div id="currlocbtn" class="bg-primary flex justify-center items-center px-2 rounded-md text-body-2 transition-all duration-300 ease-in-out hover:bg-primary2 hover:scale-110">
+                <a class="py-1 px-1"><img src="../assets/logo-icons/current-location-icon.png" class="w-7 h-5 md:h-7 md:mr-1" alt="current-location-icon"></a>
+                <button class="text-black hidden md:block font-semibold">Current Location</button>
             </div>
         </nav>
 
     </header>
     
 
-    <main>
+    <main class="w-[94%] md:w-[96%]">
         <!-- 
             - Main 1st section - includes everything about current day weather
         -->
-        <div class="bg-surface m-5 rounded-md flex flex-col justify-between w-custom-width-nav lg:w-custom-width-nav-2 2xl:w-custom-width-nav-3 2xl:h-body-height">
+        <div class="bg-surface mt-2 rounded-md flex flex-col items-center justify-between w-[100%] md:mt-4">
 
-            <p class="pl-3 pt-2 text-2xl">Now</p>
-            <div id="container-temp" class="flex flex-col justify-between 2xl:flex-row">
+            <p class="pl-3 pt-2 text-xl mr-auto">Now,</p>
+            <div id="container-temp" class="flex flex-col justify-between items-center lg:flex-row w-[100%]">
 
                 <!-- Main temperature of the day with Min and Max Temp -->
-                <div id="temp-main" class="text-8xl pl-2 flex flex-col justify-between items-center pt-5 mr-10 2xl:items-start">
+                <div id="temp-main" class="w-[100%] flex flex-col justify-between items-center pt-5 lg:items-start lg:w-[27%] lg:ml-4 xl:w-[24%]">
                     <div>
-                        <img id="weather-icon" src="/assets/weather-icons/1.png" alt="" class="ml-2 w-32 h-32 2xl:ml-20"> <!-- Weather Icon -->
+                        <img id="weather-icon" src="../assets/weather-icons/1.png" alt="weather-icon" class="w-28 h-28 lg:ml-16"> <!-- Weather Icon -->
                     </div>
-                    <div class="mt-4">
-                        <span id="temp-text1">37.5 </span><span id="temp-text2">&deg;<span class="text-7xl">C</span></span> <!-- Main Temperature -->
+                    <div class="md:mt-4">
+                        <span id="temp-text1" class="text-7xl">37.5 </span><span id="temp-text2" class="text-7xl">&deg;<span class="text-7xl">C</span></span> <!-- Main Temperature -->
                     </div>
-                    <div class="pl-1 mt-5" id="min-max-container">
-                        <div id="temp-min" class="text-xl mt-1"> <!-- Min Temp -->
+                    <div class="mt-3" id="min-max-container">
+                        <div id="temp-min" class="text-lg"> <!-- Min Temp -->
                             <span>Minimum Temperature: <span id="min-temp">37.5&deg;C</span></span>
                         </div>
-                        <div id="temp-max" class="text-xl mt-1"> <!-- Max Temp -->
+                        <div id="temp-max" class="text-lg xl:mb-2"> <!-- Max Temp -->
                             <span>Maximum Temperature: <span id="max-temp">37.5&deg;C</span></span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 1st column of information -->
-                <div id="temp-sub1" class="text-lg flex justify-between mt-5 2xl:flex-col">
-                    <div class="bg-background p-2 m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-full 2xl:w-custom-width-ele">
+                <!-- 1st column/row of information -->
+                <div id="temp-sub1" class="w-[100%] text-sm flex justify-between mt-3 lg:flex-col md:text-base lg:w-[15%] lg:mt-0 lg:text-sm xl:w-[16%]">
+                    <div class="bg-background p-2 m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-[100%] lg:m-0">
                         <p class="text-footerFontColor">Feels Like</p>
-                        <div class="flex justify-between pt-4 pb-4 pl-3 pr-3">
-                            <span><img src="/assets/logo-icons/feelsLike.png" alt="feels like icon" class="w-16 h-16"></span>
-                            <span id="feels-like" class="text-4xl pt-3">37.5 &deg;C</span>
+                        <div class="flex items-center justify-between mt-4 mb-4">
+                            <span><img src="../assets/logo-icons/feelsLike.png" alt="feels like icon" class="w-12 h-12 md:w-14 md:h-14 lg:w-12 lg:h-12"></span>
+                            <span id="feels-like" class="text-2xl mr-2 md:text-4xl lg:text-2xl xl:text-3xl">37 &deg;C</span>
                         </div>
                     </div>
-                    <div class="bg-background p-2 m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-full 2xl:w-custom-width-ele">
+                    <div class="bg-background p-2 m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-[100%] lg:m-0 lg:mt-4">
                         <p class="text-footerFontColor">Humidity</p>
-                        <div class="flex justify-between pt-4 pb-4 pl-3 pr-3">
-                            <span><img src="/assets/logo-icons/humidity.png" alt="humidity icon" class="w-16 h-16"></span>
-                            <span id="humidity" class="text-4xl pt-3">89%</span>
+                        <div class="flex items-center justify-between mt-4 mb-4">
+                            <span><img src="../assets/logo-icons/humidity.png" alt="humidity icon" class="w-12 h-12 md:w-14 md:h-14 lg:w-12 lg:h-12"></span>
+                            <span id="humidity" class="text-2xl mr-2 md:text-4xl lg:text-2xl xl:text-3xl">89%</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2nd column of information -->
-                <div id="temp-sub2" class="text-lg flex justify-between 2xl:flex-col 2xl:mt-5">
-                    <div class="bg-background p-2 m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-full 2xl:w-custom-width-ele">
-                        <p class="text-footerFontColor">Pressure</p>
-                        <div class="flex justify-between pt-4 pb-4 pl-3 pr-3">
-                            <span><img src="/assets/logo-icons/pressure.png" alt="pressure icon" class="w-16 h-16"></span>
-                            <span id="pressure" class="text-4xl pt-3">1000 hPa</span>
+                <!-- 2nd column/row of information -->
+                <div id="temp-sub2" class="w-[100%] text-sm flex justify-between lg:flex-col md:text-base lg:w-[16%] lg:mt-0 lg:text-sm">
+                    <div class="bg-background m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-[100%] lg:m-0 lg:pb-4">
+                        <p class="text-footerFontColor pl-2 pt-2">Pressure</p>
+                        <div class="flex items-center mt-4 md:justify-between mb-4">
+                            <span><img src="../assets/logo-icons/pressure.png" alt="pressure icon" class="w-12 h-12 md:w-14 md:h-14 lg:w-10 lg:h-10 xl:ml-2"></span>
+                            <span id="pressure" class="text-2xl md:mr-2 md:text-4xl lg:text-2xl lg:mr-1 xl:mr-2 xl:text-3xl">1000hPa</span>
                         </div>
                     </div>
-                    <div class="bg-background p-2 m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-full 2xl:w-custom-width-ele">
+                    <div class="bg-background p-2 m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-[100%] lg:m-0 lg:mt-4">
                         <p class="text-footerFontColor">Visibility</p>
-                        <div class="flex justify-between pt-4 pb-4 pl-3 pr-3">
-                            <span><img src="/assets/logo-icons/visibility.png" alt="visibility icon" class="w-16 h-16"></span>
-                            <span id="visibility" class="text-4xl pt-3">3 km</span>
+                        <div class="flex items-center justify-between mt-4 mb-4">
+                            <span><img src="../assets/logo-icons/visibility.png" alt="visibility icon" class="w-12 h-12 md:w-14 md:h-14 lg:w-12 lg:h-12"></span>
+                            <span id="visibility" class="text-2xl mr-2 md:text-4xl lg:text-2xl xl:text-3xl">3 km</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3rd column of information -->
-                <div id="temp-sub3" class="text-lg flex justify-between 2xl:flex-col 2xl:mt-5">
-                    <div class="bg-background p-2 m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-full 2xl:w-custom-width-ele">
-                        <p class="text-footerFontColor">Sunrise</p>
-                        <div class="flex justify-between pt-4 pb-4 pl-3 pr-3">
-                            <span><img src="/assets/logo-icons/sunrise.png" alt="sunrise icon" class="w-16 h-16"></span>
-                            <span id="sunrise-value" class="text-4xl pt-3">6:53 AM</span>
+                <!-- 3rd column/row of information -->
+                <div id="temp-sub3" class="w-[100%] text-sm flex justify-between lg:flex-col md:text-base lg:w-[15%] lg:mt-0 lg:text-sm xl:w-[16%]">
+                    <div class="bg-background p-2 m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-[100%] lg:m-0 lg:p-0 lg:pb-4">
+                        <p class="text-footerFontColor lg:pl-2 lg:pt-2">Sunrise</p>
+                        <div class="flex items-center justify-between mt-4 mb-4">
+                            <span><img src="../assets/logo-icons/sunrise.png" alt="sunrise icon" class="w-10 h-10 md:w-14 md:h-14 lg:w-10 lg:h-10 lg:ml-1 xl:ml-2"></span>
+                            <span id="sunrise-value" class="text-2xl md:mr-2 md:text-4xl lg:text-2xl lg:mr-1 xl:mr-2 xl:text-3xl">6:53 AM</span>
                         </div>
                     </div>
-                    <div class="bg-background p-2 m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-full 2xl:w-custom-width-ele">
-                        <p class="text-footerFontColor">Sunset</p>
-                        <div class="flex justify-between pt-4 pb-4 pl-3 pr-3">
-                            <span><img src="/assets/logo-icons/sunset.png" alt="sunset icon" class="w-16 h-16"></span>
-                            <span id="sunset-value" class="text-4xl pt-3">5:45 PM</span>
+                    <div class="bg-background p-2 m-3 rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 w-[100%] lg:m-0 lg:mt-4 lg:p-0 lg:pb-4">
+                        <p class="text-footerFontColor lg:pl-2 lg:pt-2">Sunset</p>
+                        <div class="flex items-center justify-between mt-4 mb-4">
+                            <span><img src="../assets/logo-icons/sunset.png" alt="sunset icon" class="w-10 h-10 md:w-14 md:h-14 lg:w-10 lg:h-10 lg:ml-1 xl:ml-2"></span>
+                            <span id="sunset-value" class="text-2xl md:mr-2 md:text-4xl lg:text-2xl lg:mr-1 xl:mr-2 xl:text-3xl">5:45 PM</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4th column of information -->
-                <div id="temp-sub4" class="text-lg bg-background rounded-md p-2 m-3 transform transition-transform duration-300 ease-in-out hover:scale-105 w-custom-width-2 lg:w-custom-width-2-2 2xl:w-custom-width-2-3 2xl:mt-8 2xl:h-aqi-height">
-                    <p class="text-footerFontColor">Air Quality Index</p>
+                <!-- 4th column/row of information -->
+                <div id="temp-sub4" class="w-[94%] my-3 lg:my-0 lg:mr-3 p-2 lg:p-0 text-sm bg-background rounded-md transform transition-transform duration-300 ease-in-out hover:scale-105 md:w-[96%] md:text-base lg:w-[22%] lg:text-sm">
+                    <p class="text-footerFontColor lg:p-2 lg:pb-3 xl:pb-1">Air Quality Index</p>
                     <div class="grid grid-cols-2 grid-rows-2">
-                        <div class="">
-                            <div class="flex flex-col items-center justify-between pt-4 pb-4 pl-3 pr-3">
-                                <span class="text-base text-footerFontColor pt-3">PM2.5</span>
-                                <p id="pm25-value" class="text-4xl mt-3">1.32</p>
+                        <div>
+                            <div class="flex flex-col items-center justify-between pt-4 pb-4 px-3 lg:px-0">
+                                <span class="text-footerFontColor pt-3">PM2.5</span>
+                                <p id="pm25-value" class="text-2xl mt-2 md:text-4xl lg:text-2xl xl:text-3xl">1.32</p>
                             </div>
                         </div>
-                        <div class="">
-                            <div class="flex flex-col items-center justify-between pt-4 pb-4 pl-3 pr-3">
-                                <span class="text-base text-footerFontColor pt-3">SO<sub>2</sub></span>
-                                <p id="so2-value" class="text-4xl mt-3">0.630</p>
+                        <div>
+                            <div class="flex flex-col items-center justify-between pt-4 pb-4 px-3 lg:px-0">
+                                <span class="text-footerFontColor pt-3">SO<sub>2</sub></span>
+                                <p id="so2-value" class="text-2xl mt-2 md:text-4xl lg:text-2xl xl:text-3xl">0.630</p>
                             </div>
                         </div>
-                        <div class="">
-                            <div class="flex flex-col items-center justify-between pt-4 pb-4 pl-3 pr-3">
-                                <span class="text-base text-footerFontColor pt-3">NO<sub>2</sub></span>
-                                <p id="no2-value" class="text-4xl mt-3">5.66</p>
+                        <div>
+                            <div class="flex flex-col items-center justify-between pt-4 pb-4 px-3 lg:px-0">
+                                <span class="text-footerFontColor pt-3">NO<sub>2</sub></span>
+                                <p id="no2-value" class="text-2xl mt-2 md:text-4xl lg:text-2xl xl:text-3xl">5.66</p>
                             </div>
                         </div>
-                        <div class="">
-                            <div class="flex flex-col items-center justify-between pt-4 pb-4 pl-3 pr-3">
-                                <span class="text-base text-footerFontColor pt-3">O<sub>3</sub></span>
-                                <p id="o3-value" class="text-4xl mt-3">26.1</p>
+                        <div>
+                            <div class="flex flex-col items-center justify-between pt-4 pb-4 px-3 lg:px-0">
+                                <span class="text-footerFontColor pt-3">O<sub>3</sub></span>
+                                <p id="o3-value" class="text-2xl mt-2 md:text-4xl lg:text-2xl xl:text-3xl">26.1</p>
                             </div>
                         </div>
                     </div>
@@ -177,53 +176,55 @@
             </div>
 
             <!-- Date and Location -->
-            <div class="m-3 flex justify-evenly border-t border-borderColor">
-                <div class="flex mt-1">
-                    <img src="/assets/logo-icons/calendar-icon.png" class="h-8 w-8 mr-2" alt="calendar icon">
-                    <span class="mt-1 text-footerFontColor text-xl" id="date">Monday 1, Jan</span>
+            <div class="w-[94%] m-3 my-2 py-1 flex justify-between border-t border-borderColor md:w-[96%] lg:w-[97%] md:justify-around lg:my-1">
+                <div class="flex mt-1 items-center">
+                    <img src="../assets/logo-icons/calendar-icon.png" class="h-7 w-7 mr-1 md:mr-2 md:h-9 md:w-9" alt="calendar icon">
+                    <span class="text-footerFontColor text-base md:text-xl" id="date">Monday 1, Jan</span>
                 </div>
-                <div class="flex mt-1">
-                    <img src="/assets/logo-icons/location-icon.png" class="h-8 w-8 mr-1" alt="loaction icon">
-                    <span class="mt-1 text-footerFontColor text-xl" id="city-country">Delhi, IN</span>
+                <div class="flex mt-1 items-center">
+                    <img src="../assets/logo-icons/location-icon.png" class="h-7 w-7 md:mr-1 md:h-9 md:w-9" alt="location icon">
+                    <span class="text-footerFontColor text-base md:text-xl" id="city-country">Delhi, IN</span>
                 </div>
             </div>
             
         </div>
+
+        <div class="border-t border-borderColor mt-2 md:mt-4"></div>
         <!-- 
             - main 2nd section - 5 day forecast cards
         -->
-        <div>
+        <div class="w-[100%] bg-surface mt-2 rounded-md md:mt-4">
 
-            <h2 class="ml-5 2xl:mt-8 2xl:mb-3">5-Days Forecast</h2> <!-- Heading -->
+            <h2 class="text-xl pl-3 pt-2">5-Days Forecast</h2> <!-- Heading -->
 
             <!-- Cards container -->
-            <div class="flex ml-6">
+            <div class="flex flex-col items-center w-[100%] lg:flex-row lg:pb-4 lg:justify-around">
 
                 <!-- Cards with weather icon, temp and date -->
-                <div class="bg-surface w-full mt-4 mr-4 rounded-md flex flex-col items-center hover:transform hover:-translate-y-4 transition duration-300 ease-in-out">
-                    <img id="forecast-icon-1" src="/assets/weather-icons/1.png" alt="weather icon" class="h-20 w-20 m-5 2xl:h-28 2xl:w-28">
-                    <span id="forecast-temp-1" class="text-4xl m-5 mb-3 2xl:text-7xl">37.5&deg;<span class="text-3xl 2xl:text-6xl">C</span></span> 
-                    <p id="forecast-date-1" class="text-base m-5 mt-0 2xl:text-xl">2 Jan, 2024</p>
+                <div class="w-[94%] md:w-[96%] lg:w-[18%] p-2 bg-background mt-2 md:mt-4 rounded-md flex lg:flex-col items-center justify-around hover:transform hover:-translate-y-2 transition duration-300 ease-in-out">
+                    <img id="forecast-icon-1" src="../assets/weather-icons/1.png" alt="weather icon" class="h-10 w-10 md:h-16 md:w-16 xl:h-20 xl:w-20 xl:mt-1">
+                    <span id="forecast-temp-1" class="text-lg md:text-3xl lg:text-4xl lg:mt-3 lg:mb-1 xl:text-5xl">37.5&deg;<span class="text-lg md:text-3xl lg:text-4xl xl:text-5xl">C</span></span> 
+                    <p id="forecast-date-1" class="text-lg xl:text-xl xl:mt-1">2 Jan, 2024</p>
                 </div>
-                <div class="bg-surface w-full mt-4 mr-4 rounded-md flex flex-col items-center hover:transform hover:-translate-y-4 transition duration-300 ease-in-out">
-                    <img id="forecast-icon-2" src="/assets/weather-icons/2.png" alt="weather icon" class="h-20 w-20 m-5 2xl:h-28 2xl:w-28">
-                    <span id="forecast-temp-2" class="text-4xl m-5 mb-3 2xl:text-7xl">28.8&deg;<span class="text-3xl 2xl:text-6xl">C</span></span>
-                    <p id="forecast-date-2" class="text-base m-5 mt-0 2xl:text-xl">3 Jan, 2024</p>
+                <div class="w-[94%] md:w-[96%] lg:w-[18%] p-2 bg-background mt-2 md:mt-4 rounded-md flex lg:flex-col items-center justify-around hover:transform hover:-translate-y-2 transition duration-300 ease-in-out">
+                    <img id="forecast-icon-2" src="../assets/weather-icons/2.png" alt="weather icon" class="h-10 w-10 md:h-16 md:w-16 xl:h-20 xl:w-20 xl:mt-1">
+                    <span id="forecast-temp-2" class="text-lg md:text-3xl lg:text-4xl lg:mt-3 lg:mb-1 xl:text-5xl">28.8&deg;<span class="text-lg md:text-3xl lg:text-4xl xl:text-5xl">C</span></span>
+                    <p id="forecast-date-2" class="text-lg xl:text-xl xl:mt-1">3 Jan, 2024</p>
                 </div>
-                <div class="bg-surface w-full mt-4 mr-4 rounded-md flex flex-col items-center hover:transform hover:-translate-y-4 transition duration-300 ease-in-out">
-                    <img id="forecast-icon-3" src="/assets/weather-icons/6.png" alt="weather icon" class="h-20 w-20 m-5 2xl:h-28 2xl:w-28">
-                    <span id="forecast-temp-3" class="text-4xl m-5 mb-3 2xl:text-7xl">21.6&deg;<span class="text-3xl 2xl:text-6xl">C</span> </span>
-                    <p id="forecast-date-3" class="text-base m-5 mt-0 2xl:text-xl">4 Jan, 2024</p>
+                <div class="w-[94%] md:w-[96%] lg:w-[18%] p-2 bg-background mt-2 md:mt-4 rounded-md flex lg:flex-col items-center justify-around hover:transform hover:-translate-y-2 transition duration-300 ease-in-out">
+                    <img id="forecast-icon-3" src="../assets/weather-icons/6.png" alt="weather icon" class="h-10 w-10 md:h-16 md:w-16 xl:h-20 xl:w-20 xl:mt-1">
+                    <span id="forecast-temp-3" class="text-lg md:text-3xl lg:text-4xl lg:mt-3 lg:mb-1 xl:text-5xl">21.6&deg;<span class="text-lg md:text-3xl lg:text-4xl xl:text-5xl">C</span> </span>
+                    <p id="forecast-date-3" class="text-lg xl:text-xl xl:mt-1">4 Jan, 2024</p>
                 </div>
-                <div class="bg-surface w-full mt-4 mr-4 rounded-md flex flex-col items-center hover:transform hover:-translate-y-4 transition duration-300 ease-in-out">
-                    <img id="forecast-icon-4" src="/assets/weather-icons/4.png" alt="weather icon" class="h-20 w-20 m-5 2xl:h-28 2xl:w-28">
-                    <span id="forecast-temp-4" class="text-4xl m-5 mb-3 2xl:text-7xl">23.4&deg;<span class="text-3xl 2xl:text-6xl">C</span> </span>
-                    <p id="forecast-date-4" class="text-base m-5 mt-0 2xl:text-xl">5 Jan, 2024</p>
+                <div class="w-[94%] md:w-[96%] lg:w-[18%] p-2 bg-background mt-2 md:mt-4 rounded-md flex lg:flex-col items-center justify-around hover:transform hover:-translate-y-2 transition duration-300 ease-in-out">
+                    <img id="forecast-icon-4" src="../assets/weather-icons/4.png" alt="weather icon" class="h-10 w-10 md:h-16 md:w-16 xl:h-20 xl:w-20 xl:mt-1">
+                    <span id="forecast-temp-4" class="text-lg md:text-3xl lg:text-4xl lg:mt-3 lg:mb-1 xl:text-5xl">23.4&deg;<span class="text-lg md:text-3xl lg:text-4xl xl:text-5xl">C</span> </span>
+                    <p id="forecast-date-4" class="text-lg xl:text-xl xl:mt-1">5 Jan, 2024</p>
                 </div>
-                <div class="bg-surface w-full mt-4 mr-6 rounded-md flex flex-col items-center hover:transform hover:-translate-y-4 transition duration-300 ease-in-out">
-                    <img id="forecast-icon-5" src="/assets/weather-icons/5.png" alt="weather icon" class="h-20 w-20 m-5 2xl:h-28 2xl:w-28">
-                    <span id="forecast-temp-5" class="text-4xl m-5 mb-3 2xl:text-7xl">22.8&deg;<span class="text-3xl 2xl:text-6xl">C</span> </span>
-                    <p id="forecast-date-5" class="text-base m-5 mt-0 2xl:text-xl">6 Jan, 2024</p>
+                <div class="w-[94%] md:w-[96%] lg:w-[18%] p-2 bg-background my-2 md:my-4 lg:mb-0 rounded-md flex lg:flex-col items-center justify-around hover:transform hover:-translate-y-2 transition duration-300 ease-in-out">
+                    <img id="forecast-icon-5" src="../assets/weather-icons/5.png" alt="weather icon" class="h-10 w-10 md:h-16 md:w-16 xl:h-20 xl:w-20 xl:mt-1">
+                    <span id="forecast-temp-5" class="text-lg md:text-3xl lg:text-4xl lg:mt-3 lg:mb-1 xl:text-5xl">22.8&deg;<span class="text-lg md:text-3xl lg:text-4xl xl:text-5xl">C</span> </span>
+                    <p id="forecast-date-5" class="text-lg xl:text-xl xl:mt-1">6 Jan, 2024</p>
                 </div>
                 
             </div>
@@ -232,14 +233,14 @@
     <!--
         - Footer with openweather website link
     -->
-    <footer class="flex justify-center items-center m-5 pt-4 h-8 text-lg border-t border-borderColor text-footerFontColor font-bold 2xl:text-xl">
-        <p>Copyright &copy; 2024 WeatherWise. All Rights Reserved.</p>
-        <div class="flex items-center">
-            <p class="mr-1 ml-6">Powered By</p>
+    <footer class="flex flex-col md:flex-row items-center w-[94%] text-sm md:text-lg mt-2 border-t border-borderColor text-footerFontColor font-bold md:w-[96%] md:justify-center md:mt-4">
+        <p class="pt-2 md:pb-2">Copyright &copy; 2024 WeatherWise. All Rights Reserved.</p>
+        <div class="flex items-center pt-1 pb-2 md:pt-2 md:ml-5">
+            <p>Powered By</p>
 
             <!-- target="_blank": This instructs the browser to open the link in a new window or tab.
                     rel="noopener noreferrer": This attribute helps prevent the new page from gaining access to the original page's window object, which is a security measure to avoid potential malicious behavior and improve performance. -->
-            <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer"><img class="ml-2 w-44 transform transition-transform duration-300 ease-in-out hover:scale-105" src="/assets/logo-icons/openweather.png" alt="openweather website logo and link"></a>
+            <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer"><img class="transform transition-transform duration-300 ease-in-out hover:scale-105 ml-2 h-5 md:h-7" src="../assets/logo-icons/openweather.png" alt="openweather website logo and link"></a>
         </div>
     </footer>
 

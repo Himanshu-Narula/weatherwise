@@ -19,5 +19,5 @@ Weatherwise's footer includes copyright information and powered by openweather a
 GitHUb link of the project to display its version control system.
 https://github.com/Himanshu-Narula/weatherwise.git
 
-<!-- Sample Screenshots -->
-Weatherwise final product's sample screenshot are included inside provided folder with name: "Sample Screenshots".
+<!-- Sample Screenshots and Responsive Video -->
+Weatherwise final product's sample screenshot and a Video showing its Responsiveness on different required screen sizes are included inside provided folder with name: "Sample Screenshots and Video".
