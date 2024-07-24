@@ -13,7 +13,7 @@ const dd2 = document.getElementById('2ndDD'); // Dropdown list element
 const dd3 = document.getElementById('3rdDD'); // Dropdown list element
 
 function showHideDD(){ // To show or hide dropdown menu according to defined conditions using event listner
-    if(sessionStorage.length > 1){
+    if(sessionStorage.length > 0){
         searchInp.addEventListener('click', () => {
             dropdownMenu.classList.remove('hidden');
         });
@@ -27,7 +27,7 @@ function showHideDD(){ // To show or hide dropdown menu according to defined con
 }
 
 document.addEventListener('DOMContentLoaded', () => { // Event listener added to Content Load to check if there is any saved city in session storage and display dropdown accordingly
-    if(sessionStorage.length > 1){ // if there are previously contained cities in Session Storage, then assigning them to Dropdown list elements
+    if(sessionStorage.length > 0){ // if there are previously contained cities in Session Storage, then assigning them to Dropdown list elements
         dd1.innerHTML = sessionStorage.getItem("1");
         dd2.innerHTML = sessionStorage.getItem("2");
         dd3.innerHTML = sessionStorage.getItem("3");
@@ -163,11 +163,11 @@ async function checkWeather(city){
 
             // function to update Session storage according to conditions
             function updateSS(city){
-                if(sessionStorage.length == 1){
+                if(sessionStorage.length == 0){
                     sessionStorage.setItem("3",city);
-                } else if(sessionStorage.length == 2){
+                } else if(sessionStorage.length == 1){
                     sessionStorage.setItem("2",city);
-                } else if(sessionStorage.length == 3){
+                } else if(sessionStorage.length == 2){
                     sessionStorage.setItem("1",city);
                 } else{
                     sessionStorage.setItem("3",sessionStorage.getItem("2"));
@@ -178,7 +178,7 @@ async function checkWeather(city){
             updateSS(city);
 
             // using if condition to update dropdown list elements using session storage if condition allows
-            if(sessionStorage.length > 1){
+            if(sessionStorage.length > 0){
                 dd1.innerHTML = sessionStorage.getItem("1");
                 dd2.innerHTML = sessionStorage.getItem("2");
                 dd3.innerHTML = sessionStorage.getItem("3");
